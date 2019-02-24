@@ -1,0 +1,116 @@
+hHist = [[0.1448346339650688, 0.14993055555555557],
+ [0.14037532515793383, 0.15954861111111107],
+ [0.15440356744704575, 0.14093750000000005],
+ [0.3403939056112969, 0.09190972222222227],
+ [0.19360832404310668, 0.27249999999999996],
+ [0.1658305462653289, 0.20152777777777775]]
+
+hMorph = [[0.25956893348197696, 0.10524305555555558],
+ [0.43942772203641767, 0.01951388888888894],
+ [0.16977889260497958, 0.1967361111111111],
+ [0.3001207729468599, 0.18472222222222223],
+ [0.11459494611668519, 0.09725694444444444]]
+
+
+bHist = [[0.26449275362318836, 0.1340555555555556],
+ [0.2646376811594203, 0.14833333333333332],
+ [0.2778260869565218, 0.12283333333333335],
+ [0.5755072463768116, 0.050000000000000044],
+ [0.43101449275362314, 0.2356666666666667],
+ [0.2476811594202899, 0.20366666666666666]]
+
+bMorph = [[0.24644927536231886, 0.21366666666666667],
+ [0.17137681159420293, 0.2339444444444444],
+ [0.4368115942028985, 0.09872222222222227],
+ [0.2911594202898551, 0.2843333333333333],
+ [0.3346376811594203, 0.0882222222222222]]
+
+lHist = [[0.33255693581780543, 0.1898561507936508],
+ [0.322463768115942, 0.20176091269841268],
+ [0.33850931677018636, 0.18353174603174605],
+ [0.4415113871635611, 0.17435515873015872],
+ [0.32582815734989645, 0.30307539682539686],
+ [0.33203933747412007, 0.2709573412698413]]
+
+lMorph = [[0.2743271221532091, 0.4074900793650794],
+ [0.3175465838509317, 0.2678571428571429],
+ [0.32569875776397517, 0.32886904761904767],
+ [0.3049948240165632, 0.42460317460317465],
+ [0.1709368530020704, 0.46155753968253965]]
+
+
+import numpy as np
+import matplotlib.pyplot as plt
+columns = ('FRR', 'FAR')
+rows = ['SVM-RBF', 'SVM-L', 'B-SVM-RBF', 'Random Forest', 'k-NN', 'MLP']
+
+values = np.arange(0, 2500, 500)
+value_increment = 1000
+
+# Get some pastel shades for the colors
+colors = plt.cm.BuPu(np.linspace(0, 0.5, len(rows)))
+n_rows = len(lHist)
+
+index = np.arange(len(columns)) + 0.3
+bar_width = 0.4
+
+# Initialize the vertical-offset for the stacked bar chart.
+y_offset = np.zeros(len(columns))
+
+# Plot bars and create text labels for the table
+cell_text = []
+for row in range(n_rows):
+    y_offset = lHist[row]
+    cell_text.append([ "%1.1f"%(x*100)+'%'  for x in y_offset])
+# Reverse colors and text labels to display the last value at the top.
+colors = colors[::-1]
+
+# Add a table at the bottom of the axes
+the_table = plt.table(cellText=cell_text,
+                      rowLabels=rows,
+                      rowColours=colors,
+                      colLabels=columns,
+                      loc='center')
+
+
+plt.axis('off')
+plt.title('Firmas occidentales, histograma de LBP y HoG a 15 puntos')
+plt.savefig("lhist.png", bbox_inches='tight')
+
+import numpy as np
+import matplotlib.pyplot as plt
+columns = ('FRR', 'FAR')
+rows = ['SVM-RBF', 'SVM-L', 'Random Forest', 'k-NN', 'MLP']
+
+values = np.arange(0, 2500, 500)
+value_increment = 1000
+
+# Get some pastel shades for the colors
+colors = plt.cm.BuPu(np.linspace(0, 0.5, len(rows)))
+n_rows = len(lHist)
+
+index = np.arange(len(columns)) + 0.3
+bar_width = 0.4
+
+# Initialize the vertical-offset for the stacked bar chart.
+y_offset = np.zeros(len(columns))
+
+# Plot bars and create text labels for the table
+cell_text = []
+for row in range(n_rows):
+    y_offset = lHist[row]
+    cell_text.append([ "%1.1f"%(x*100)+'%'  for x in y_offset])
+# Reverse colors and text labels to display the last value at the top.
+colors = colors[::-1]
+
+# Add a table at the bottom of the axes
+the_table = plt.table(cellText=cell_text,
+                      rowLabels=rows,
+                      rowColours=colors,
+                      colLabels=columns,
+                      loc='center')
+
+
+plt.axis('off')
+plt.title('Firmas occidentales, histograma de LBP y HoG a 15 puntos')
+plt.savefig("lhist.png", bbox_inches='tight')

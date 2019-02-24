@@ -1,0 +1,38 @@
+ 
+ TODO:
+    #Falsificaciones ingenuas:#
+        Xor: #CEDAR#, #Hindi#, #Bengali#
+        Morph Centered: #CEDAR#, #Hindi#, #Bengali#
+        Hist 32PX : #CEDAR#, #Hindi#, #Bengali#
+        Hist 64PX : CEDAR, Hindi, Bengali
+        Hist Non-LBP : #Cedar#,#Hindi#,#Bengali#
+        ##Modelo Global##
+        ##Modelo Global Combinado##
+        ##Modelo Global PCA##
+        ##Modelo Global HoGLBP##
+    Modelo por Votación:
+        #Rehacer, o volver a correr, es sencillo#
+        Preguntar a Rhadames si debería hacer esto con todos los modelos. 
+    Manuscrito:
+        #Imagen de los centros geometricos#
+        #Imagen redes neuronales#
+        #Imagen SVM#
+        Complementar las dos secciones
+        Terminar de escribir lo que falta
+            Varianza de las características
+            Sección sobre la aplicación?
+            Seccion de conclusiones y trabajos futuros.
+        Empezar la presentación
+    App:
+        ##Arreglar la morfología##
+        ##QUitar el borde de la página de verificación##
+        ##Hacer visible el misc. sólo cuando ya se haya verificado##
+ 
+ python3 testSimpleForgeries.py 'BHSig260FIX/Hindi/Modelos_Hist_sin_LBP/' 'BHSig260FIX/Hindi/Vectores_Característicos/simpleForgeriesVectors.LBPHoG' 2; python3 testSimpleForgeries.py 'BHSig260FIX/Bengali/Modelos_Hist_sin_LBP/' 'BHSig260FIX/Bengali/Vectores_Característicos/simpleForgeriesVectors.LBPHoG' 1
+
+
+
+ Arreglar del manuscrito:
+    #Referencia a Kekre en la primera página de la sección de Diseño e implementación.#
+    Imágenes LBP
+    Texto para las imágenes

@@ -1,0 +1,5 @@
+pasos para hacer funcionar las librerias escritas en c++
+sudo apt-get install libboost-all-dev ##Boost/Python
+
+g++ -Wall -c -fPIC -O3 zsThinning2.cpp -o zsThinning2.o -I /usr/include/python3.6/
+g++ -shared -Wl,-soname,zsT.so -o zst.so zsThinning2.o -lopencv_highgui -lopencv_imgproc -lopencv_core -lopencv_imgcodecs -lopencv_videoio -L/usr/local/lib

@@ -1,0 +1,7 @@
+La tesis de Marjorie no especifica con que umbral se calculan las esquinas en el algoritmo de Harris, 
+así que procedí a intentar tres métodos:
+1) todos los superiores a la media 
+2) todos los superiores a cierta desviación (1, 5 y 10)
+3) todos los superiores a la mediana
+
+Todos los anteriores otorgan una gran cantidad de puntos.
